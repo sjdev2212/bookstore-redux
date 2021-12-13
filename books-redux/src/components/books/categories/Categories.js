@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-export const Categories = () => {
-    return (
-        <div>
-            <h1>UNDER CONSTRUCTION</h1>
-        </div>
-    )
-}
+export const Categories = () => (
+  <div>
+    <h1>UNDER CONSTRUCTION</h1>
+  </div>
+);

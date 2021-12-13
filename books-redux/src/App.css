@@ -2,8 +2,7 @@
   text-align: center;
 }
 
-
-.navbar{
+.navbar {
   display: flex;
   justify-content: space-around;
 }
