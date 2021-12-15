@@ -1,7 +1,7 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
-import Books from './components/books/Books';
-import Categories from './components/categories/Categories';
+import Books from './components/Books';
+import Categories from './components/Categories';
 
 const App = () => (
   <section className="App">
