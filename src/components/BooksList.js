@@ -1,27 +1,29 @@
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
-import { addBookToAApi } from '../redux/books/books';
+import { addBook } from '../redux/books/books';
 import Book from './Book';
 
 function BooksList() {
   const booksStore = useSelector((state) => state.books);
   const dispatch = useDispatch();
 
-  const addBooks = () => {
+  const addBooks = (e) => {
+    e.preventDefault();
+
     const id = uuidv4();
     const titleInput = document.getElementById('books-input');
-    const categoryInput = document.getElementById('category-input');
+    const authorInput = document.getElementById('author-input');
 
     const newBook = {
-      itemId: id,
+      item_id: id,
       title: titleInput.value,
-      category: categoryInput.value,
+      author: authorInput.value,
     };
 
-    dispatch(addBookToAApi(newBook));
+    dispatch(addBook(newBook));
 
     titleInput.value = '';
-    categoryInput.value = '';
+    authorInput.value = '';
   };
 
   return (
@@ -36,16 +38,10 @@ function BooksList() {
 
       <div />
 
-      <form
-        action=""
-        onSubmit={(e) => {
-          e.preventDefault();
-          addBooks();
-        }}
-      >
+      <form action="" onSubmit={addBooks}>
         <h2>ADD NEW BOOK</h2>
         <input type="text" name="" placeholder="Book" id="books-input" required />
-        <input type="text" name="" placeholder="Category" id="category-input" required />
+        <input type="text" name="" placeholder="Author" id="author-input" required />
         <button type="submit">ADD BOOK</button>
       </form>
     </div>
