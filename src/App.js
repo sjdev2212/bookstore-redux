@@ -1,6 +1,6 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
-import Books from './components/Books';
+import BooksList from './components/BooksList';
 import Categories from './components/Categories';
 
 const App = () => (
@@ -12,7 +12,7 @@ const App = () => (
     </nav>
 
     <Routes>
-      <Route exact path="/" element={<Books />} />
+      <Route exact path="/" element={<BooksList />} />
 
       <Route path="/categories" element={<Categories />} />
 

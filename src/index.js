@@ -1,22 +1,18 @@
-/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import reducer from './redux/books/books';
-import './index.css';
 import App from './App';
+import store from './redux/configureStore';
 
-const store = createStore(reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <React.StrictMode>
+  <BrowserRouter>
+    <React.StrictMode>
+      <Provider store={store}>
         <App />
-      </React.StrictMode>
-    </BrowserRouter>
-  </Provider>,
+      </Provider>
+    </React.StrictMode>
+  </BrowserRouter>,
   document.getElementById('root'),
 );
