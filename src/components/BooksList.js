@@ -25,30 +25,34 @@ function BooksList() {
   };
 
   return (
-    <div>
-      <ul>
-        {
+    <>
+      <div className="all-books">
+        <ul>
+          {
           booksStore.map((book) => (
             <Book key={book.title} book={book} />
           ))
         }
-      </ul>
+        </ul>
 
-      <div />
+        <div />
+      </div>
 
       <form
+        className="form"
         action=""
         onSubmit={(e) => {
           e.preventDefault();
           addBooks();
         }}
       >
-        <h2>ADD NEW BOOK</h2>
-        <input type="text" name="" placeholder="Book" id="books-input" required />
-        <input type="text" name="" placeholder="Category" id="category-input" required />
-        <button type="submit">ADD BOOK</button>
+        <h2 className="form-title">ADD NEW BOOK</h2>
+        <input className="input-book" type="text" name="" placeholder="Book" id="books-input" required />
+        <input className="input-category" type="text" name="" placeholder="Category" id="category-input" required />
+        <button className="add-btn" type="submit">ADD BOOK</button>
       </form>
-    </div>
+
+    </>
   );
 }
 
