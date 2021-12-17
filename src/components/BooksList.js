@@ -37,6 +37,7 @@ function BooksList() {
 
         <div />
       </div>
+      <h2 className="form-title">ADD NEW BOOK</h2>
 
       <form
         className="form"
@@ -46,8 +47,7 @@ function BooksList() {
           addBooks();
         }}
       >
-        <h2 className="form-title">ADD NEW BOOK</h2>
-        <input className="input-book" type="text" name="" placeholder="Book" id="books-input" required />
+        <input className="input-book" type="text" name="" placeholder="Book Title" id="books-input" required />
         <input className="input-category" type="text" name="" placeholder="Category" id="category-input" required />
         <button className="add-btn" type="submit">ADD BOOK</button>
       </form>
